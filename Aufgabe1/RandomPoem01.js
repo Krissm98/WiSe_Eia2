@@ -7,7 +7,7 @@ var aufgabe1RandomPoem;
     //console.log(namenArray, aktionenArray, objekteArray);
     for (var index = namenArray.length; index > 0; index--) {
         getverse(namenArray, aktionenArray, objekteArray);
-        //console.log(index);
+        //console.log(index);    
     }
     function getverse(_namenArrayStelle, _aktionenArrayStelle, _objekteArrayStelle) {
         var verse = "";

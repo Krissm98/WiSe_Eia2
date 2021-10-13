@@ -1,7 +1,7 @@
 namespace aufgabe1RandomPoem {
 
     //in Zusammenarbeit mit Liz, Lea und Amelie
-    
+
 let namenArray: string [] = ["Harry", "Hermine", "Ron", "Hagrid", "Snape", "Dumbledore"];
 let aktionenArray: string [] = ["braut", "liebt", "studiert", "hasst", "zaubert", "zerstört"];
 let objekteArray: string [] = ["Zaubertränke", "den Grimm", "Lupin", "Hogwarts", "die Karte des Rumtreibers", "Dementoren"];
@@ -11,8 +11,7 @@ let objekteArray: string [] = ["Zaubertränke", "den Grimm", "Lupin", "Hogwarts"
 for (let index: number = namenArray.length; index > 0; index--) {
     
     getverse(namenArray, aktionenArray, objekteArray);
-    //console.log(index);
-    
+    //console.log(index);    
 }
 
 function getverse(_namenArrayStelle: string[], _aktionenArrayStelle: string[], _objekteArrayStelle: string[]): string {
