@@ -1,0 +1,45 @@
+
+.div0 {
+    margin-top: 50px;
+    margin-left: 50px;
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    border: black;
+    border-style: dotted;
+    border-width: 2px;
+    background-color: cornflowerblue;
+}
+
+.div1 {
+    margin-top: 50px;
+    margin-left: 600px;
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    border: black;
+    border-style: dotted;
+    border-width: 2px;
+    background-color:lemonchiffon;
+}
+
+h1 {
+    margin-left: 50px;;
+}
+
+#span01 {
+    position:fixed;
+    width: 25vh;
+    height:25vh;
+    background-color: rgb(240, 129, 18);
+    border-width: 2px;
+    border-style:solid;
+    z-index: 4;
+    margin-top: 15px;
+    margin-left: 10px;
+}
+.button01 {
+    width: 100px;
+    height: 40px;
+    margin-left: 200px;
+}
