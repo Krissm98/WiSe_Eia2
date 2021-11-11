@@ -1,0 +1,92 @@
+namespace Aufgabe5 {
+
+    window.addEventListener("load", handleLoad);
+
+    let eingabe: HTMLInputElement;
+    let nodeList: NodeListOf<HTMLInputElement>;
+    let font: HTMLSelectElement;
+    let cardSize: string;
+    let backgroundColor1: string;
+    let body: HTMLBodyElement = <HTMLBodyElement>document.getElementById("body1");
+    function handleLoad(_event: Event): void {
+
+        eingabe = <HTMLInputElement>document.getElementById("kartenName");
+        let form: HTMLDivElement = <HTMLDivElement>document.querySelector("div#formSettings");
+        form.addEventListener("change", handleChange);
+        document.getElementById("startButton").addEventListener("click", gameStart);
+    }
+
+    function handleChange(_event: Event): void {
+        let formData: FormData = new FormData(document.forms[0]);
+        let nodeList: NodeListOf<HTMLInputElement> = document.querySelectorAll("input");
+        let font: HTMLSelectElement = <HTMLSelectElement>document.querySelector("select");
+        let cardSize: string = nodeList[0].value;
+        let backgroundColor1: string = nodeList[1].value;
+        console.log(font.value);
+        // for (let entry of formData) {
+        //     console.log(formData);
+        // }
+        //console.log(_event);
+        console.log(nodeList);
+        // console.log(backgroundColor1);
+        // console.log(font.value);
+       
+    }
+
+
+    function gameStart(): void {
+        let formData: FormData = new FormData(document.forms[0]);
+        let nodeList: NodeListOf<HTMLInputElement> = document.querySelectorAll("input");
+        let font: HTMLSelectElement = <HTMLSelectElement>document.querySelector("select");
+        let cardSize: String = nodeList[0].value;
+        let backgroundColor1: string = nodeList[1].value;
+        let cardBackgroundColor: string = nodeList[2].value;
+        let fontColor: string = nodeList[3].value;
+        
+        
+        
+        document.getElementById("formSettings").classList.add("ishidden");
+        let array1: any = eingabe.value.split("");
+
+        //let bla: string = eingabe;
+        // console.log(array1);
+        //debugger;
+        for (let index: number = 0; index < eingabe.value.length; index++) {
+
+            let zufallsZahl: number = Math.floor(Math.random() * (array1.length));
+            let card: HTMLElement = document.createElement("div");
+            card.classList.add("Card" + index);
+            document.body.appendChild(card);
+            card.innerHTML = array1[zufallsZahl];
+            //console.log(array1[zufallsZahl]);
+            array1.splice(zufallsZahl, 1);
+            //console.log(array1);
+            card.style.width = cardSize + "px"; 
+            card.style.height = cardSize + "px"; 
+            document.body.style.backgroundColor = backgroundColor1;
+            card.style.backgroundColor = cardBackgroundColor;
+            card.style.fontFamily = font.value.toString();
+            card.style.color = fontColor;
+            card.style.fontSize = "font-size: fit-width | fit-height | fit-height-precise;";
+            card.style.textAlign = "center";
+            card.style.display = "grid";
+            card.style.borderStyle = "solid";
+            card.style.borderWidth = "5px";
+            card.style.borderColor = "black";
+        }
+
+        // for (let i = 0; i < array1.length; i++) {
+
+        // }
+    }
+
+
+
+
+
+
+
+
+
+}
+
