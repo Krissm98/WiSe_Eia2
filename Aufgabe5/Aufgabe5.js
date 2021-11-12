@@ -67,6 +67,7 @@ var Aufgabe5;
             card.style.borderStyle = "solid";
             card.style.borderWidth = "5px";
             card.style.borderColor = "black";
+            card.style.float = "left";
             selectField = document.getElementById("formSettings");
             selectField.classList.add("isHidden");
             setTimeout(hideCards2, (arrayCards2.length * 1000));

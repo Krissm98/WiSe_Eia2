@@ -82,6 +82,7 @@ namespace Aufgabe5 {
             card.style.borderStyle = "solid";
             card.style.borderWidth = "5px";
             card.style.borderColor = "black";
+            card.style.float = "left";
 
             selectField = <HTMLDivElement>document.getElementById("formSettings");
             selectField.classList.add("isHidden");
