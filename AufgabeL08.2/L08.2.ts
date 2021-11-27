@@ -197,7 +197,7 @@ namespace Aufgabe_L082 {
         
 
     }
-<s>
+
     function drawLeaf3(_position: Vector): void {
         crc2.beginPath();
         crc2.translate(_position.x, _position.y);
