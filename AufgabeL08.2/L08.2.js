@@ -19,6 +19,7 @@ var Aufgabe_L082;
         drawLeaf1({ x: 100, y: 800 });
         drawLeaf2({ x: 400, y: -100 });
         drawLeaf3({ x: 500, y: 30 });
+        drawAnimal({ x: 300, y: 700 });
     }
     function drawBackground() {
         console.log("Background");
@@ -154,6 +155,28 @@ var Aufgabe_L082;
         crc2.lineWidth = 2;
         crc2.stroke();
         crc2.fill();
+    }
+    function drawAnimal(_position) {
+        crc2.beginPath();
+        crc2.ellipse(300, 700, 15, 30, Math.PI / 100, 0, 2 * Math.PI);
+        crc2.fillStyle = "brown";
+        crc2.fill();
+        crc2.closePath();
+        crc2.moveTo(300, 700);
+        crc2.ellipse(280, 720, 10, 30, Math.PI / 2, 0, 2 * Math.PI);
+        crc2.fillStyle = "brown";
+        crc2.fill();
+        crc2.closePath();
+        crc2.moveTo(300, 700);
+        crc2.ellipse(310, 670, 13, 13, Math.PI / 2, 0, 2 * Math.PI);
+        crc2.fillStyle = "brown";
+        crc2.fill();
+        crc2.closePath();
+        crc2.moveTo(300, 700);
+        crc2.ellipse(305, 660, 5, 15, Math.PI / 1, 0, 2 * Math.PI);
+        crc2.fillStyle = "brown";
+        crc2.fill();
+        crc2.closePath();
     }
 })(Aufgabe_L082 || (Aufgabe_L082 = {}));
 //# sourceMappingURL=L08.2.js.map
