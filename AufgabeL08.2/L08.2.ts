@@ -20,6 +20,7 @@ namespace Aufgabe_L082 {
         let horizon: number = crc2.canvas.height * golden;
 
         drawBackground();
+        drawAnimal({x: 300, y: 1000});
         drawCloud({ x: 500, y: 125 }, { x: 250, y: 75 });
         drawMountains({ x: 0, y: horizon }, 75, 200, "grey", "white");
         drawMountains({ x: 0, y: horizon }, 50, 150, "grey", "lightgrey");
@@ -27,7 +28,7 @@ namespace Aufgabe_L082 {
         drawLeaf1({ x: 100, y: 800 });
         drawLeaf2({ x: 400, y: -100});
         drawLeaf3({ x: 500, y: 30});
-        drawAnimal( {x: 300, y: 700});
+        
     }
 
     function drawBackground(): void {
