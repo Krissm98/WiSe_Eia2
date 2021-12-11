@@ -8,6 +8,7 @@ var Aufgabe_9_2;
     var randomNumber = Math.random() * 100;
     var leaves = [];
     var treeNumber = 0;
+    var cloud;
     function handleLoad(_evet) {
         var canvas = document.querySelector("canvas");
         if (!canvas)
@@ -18,16 +19,13 @@ var Aufgabe_9_2;
         Aufgabe_9_2.crc2.strokeStyle = "white";
         var horizon = Aufgabe_9_2.crc2.canvas.height * golden;
         drawBackground();
-        var wolke = new Aufgabe_9_2.Wolke(1);
-        console.log(wolke);
-        // let blatt: Leaf = new Leaf(1);
-        // console.log(blatt);
         drawMountains({ x: 0, y: horizon }, 75, 200, "grey", "white");
         drawMountains({ x: 0, y: horizon }, 50, 150, "grey", "lightgrey");
         drawTrees({ x: 50, y: 450 }, { x: 75, y: 150 });
-        // drawCloud({ x: 500, y: 125 }, { x: 250, y: 75 });
+        createCloud();
         createLeaf();
         window.setInterval(update, 20);
+        window.setInterval(update2, 1000);
     }
     function drawBackground() {
         console.log("Background");
@@ -97,28 +95,6 @@ var Aufgabe_9_2;
             imageTree = Aufgabe_9_2.crc2.getImageData(0, 0, Aufgabe_9_2.crc2.canvas.width, Aufgabe_9_2.crc2.canvas.height);
         }
     }
-    // function drawCloud(_position: Vector, _size: Vector): void {
-    //     console.log("Cloud", _position, _size);
-    //     let numberParticles: number = 20;
-    //     let radiusParticles: number = 50;
-    //     let particle: Path2D = new Path2D();
-    //     let gradient: CanvasGradient = crc2.createRadialGradient(0, 0, 0, 0, 0, radiusParticles);
-    //     particle.arc(0, 0, radiusParticles, 0, 2 * Math.PI);
-    //     gradient.addColorStop(0, "HSLA(0, 100%, 100%, 0.5)");
-    //     gradient.addColorStop(1, "HSLA(0, 100%, 100%, 0)");
-    //     crc2.save();
-    //     crc2.translate(_position.x, _position.y);
-    //     crc2.fillStyle = gradient;
-    //     for (let i: number = 0; i < numberParticles; i++) {
-    //         crc2.save();
-    //         let x: number = (Math.random() - 0.5) * _size.x;
-    //         let y: number = - (Math.random() * _size.y);
-    //         crc2.translate(x, y);
-    //         crc2.fill(particle);
-    //         crc2.restore();
-    //     }
-    //     crc2.restore();
-    // }
     function createLeaf() {
         for (var i = 0; i < 10; i++) {
             var positionXOfLeaf = Math.random() * Aufgabe_9_2.crc2.canvas.width;
@@ -128,6 +104,9 @@ var Aufgabe_9_2;
             console.log(leaves);
             leaf.draw();
         }
+    }
+    function createCloud() {
+        cloud = new Aufgabe_9_2.Wolke();
     }
     function update() {
         console.log("Update");
@@ -139,6 +118,10 @@ var Aufgabe_9_2;
             leaf.move(1 / 60);
             leaf.draw();
         }
+        cloud.draw();
+    }
+    function update2() {
+        cloud.move(1 / 20);
     }
 })(Aufgabe_9_2 || (Aufgabe_9_2 = {}));
 //# sourceMappingURL=main2.js.map

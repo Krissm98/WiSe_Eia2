@@ -15,6 +15,7 @@ namespace Aufgabe_9_2 {
     let randomNumber: number = Math.random() * 100;
     let leaves: Leaf[] = [];
     let treeNumber: number = 0;
+    let cloud: Wolke;
 
     export let crc2: CanvasRenderingContext2D;
 
@@ -30,25 +31,13 @@ namespace Aufgabe_9_2 {
         let horizon: number = crc2.canvas.height * golden;
 
         drawBackground();
-
-        let wolke: Wolke = new Wolke(1);
-        console.log(wolke);
-
-        // let blatt: Leaf = new Leaf(1);
-        // console.log(blatt);
-
-        
-        
-
         drawMountains({ x: 0, y: horizon }, 75, 200, "grey", "white");
         drawMountains({ x: 0, y: horizon }, 50, 150, "grey", "lightgrey");
         drawTrees({ x: 50, y: 450 }, { x: 75, y: 150 });
-
-        // drawCloud({ x: 500, y: 125 }, { x: 250, y: 75 });
-
+        createCloud();
         createLeaf();
         window.setInterval(update, 20);
-
+        window.setInterval(update2, 1000);
 
 
 
@@ -145,36 +134,6 @@ namespace Aufgabe_9_2 {
     }
 
 
-    // function drawCloud(_position: Vector, _size: Vector): void {
-    //     console.log("Cloud", _position, _size);
-
-    //     let numberParticles: number = 20;
-    //     let radiusParticles: number = 50;
-    //     let particle: Path2D = new Path2D();
-    //     let gradient: CanvasGradient = crc2.createRadialGradient(0, 0, 0, 0, 0, radiusParticles);
-
-    //     particle.arc(0, 0, radiusParticles, 0, 2 * Math.PI);
-    //     gradient.addColorStop(0, "HSLA(0, 100%, 100%, 0.5)");
-    //     gradient.addColorStop(1, "HSLA(0, 100%, 100%, 0)");
-
-    //     crc2.save();
-    //     crc2.translate(_position.x, _position.y);
-
-    //     crc2.fillStyle = gradient;
-
-    //     for (let i: number = 0; i < numberParticles; i++) {
-    //         crc2.save();
-    //         let x: number = (Math.random() - 0.5) * _size.x;
-    //         let y: number = - (Math.random() * _size.y);
-    //         crc2.translate(x, y);
-    //         crc2.fill(particle);
-    //         crc2.restore();
-    //     }
-
-    //     crc2.restore();
-
-    // }
-
     function createLeaf(): void {
 
         for (let i: number = 0; i < 10; i++) {
@@ -190,6 +149,10 @@ namespace Aufgabe_9_2 {
         }
     }
 
+    function createCloud(): void {
+        cloud = new Wolke();
+    }
+
     function update(): void {
         console.log("Update");
 
@@ -201,7 +164,11 @@ namespace Aufgabe_9_2 {
             leaf.move(1 / 60);
             leaf.draw();
         }
+        cloud.draw();
+        
+    }
 
-
+    function update2(): void {
+        cloud.move(1 / 20);
     }
 }

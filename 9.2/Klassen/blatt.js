@@ -28,7 +28,7 @@ var Aufgabe_9_2;
             Aufgabe_9_2.crc2.save();
             Aufgabe_9_2.crc2.beginPath();
             Aufgabe_9_2.crc2.fillStyle = "red";
-            Aufgabe_9_2.crc2.ellipse(this.positionXOfLeaf, this.positionYOfLeaf, 8, 20, 10, 10, 20);
+            Aufgabe_9_2.crc2.ellipse(this.position.x, this.position.x, 8, 20, 10, 10, 20);
             Aufgabe_9_2.crc2.fill();
             Aufgabe_9_2.crc2.stroke();
             Aufgabe_9_2.crc2.closePath();

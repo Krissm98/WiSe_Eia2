@@ -38,16 +38,13 @@ namespace Aufgabe_9_2 {
 
             crc2.beginPath();
             crc2.fillStyle = "red";
-            
-            crc2.ellipse(this.positionXOfLeaf, this.positionYOfLeaf, 8, 20, 10, 10, 20);
+
+            crc2.ellipse(this.position.x, this.position.x, 8, 20, 10, 10, 20);
             crc2.fill();
             crc2.stroke();
             crc2.closePath();
 
             crc2.restore();
-
-
-
         }
     }
 
