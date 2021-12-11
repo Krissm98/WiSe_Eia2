@@ -25,7 +25,6 @@ var Aufgabe_9_2;
         createCloud();
         createLeaf();
         window.setInterval(update, 20);
-        window.setInterval(update2, 1000);
     }
     function drawBackground() {
         console.log("Background");
@@ -119,8 +118,6 @@ var Aufgabe_9_2;
             leaf.draw();
         }
         cloud.draw();
-    }
-    function update2() {
         cloud.move(1 / 20);
     }
 })(Aufgabe_9_2 || (Aufgabe_9_2 = {}));

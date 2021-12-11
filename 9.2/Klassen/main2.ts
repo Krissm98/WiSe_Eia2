@@ -37,7 +37,7 @@ namespace Aufgabe_9_2 {
         createCloud();
         createLeaf();
         window.setInterval(update, 20);
-        window.setInterval(update2, 1000);
+        
 
 
 
@@ -165,10 +165,9 @@ namespace Aufgabe_9_2 {
             leaf.draw();
         }
         cloud.draw();
+        cloud.move(1 / 20);
         
     }
 
-    function update2(): void {
-        cloud.move(1 / 20);
-    }
+   
 }
