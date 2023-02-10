@@ -1,7 +1,7 @@
 var Aufgabe9_1;
 (function (Aufgabe9_1) {
-    var Animal = /** @class */ (function () {
-        function Animal(_animal, _animalName, _sound, _foodType, _foodEaten, _foodAmount) {
+    class Animal {
+        constructor(_animal, _animalName, _sound, _foodType, _foodEaten, _foodAmount) {
             this.animal = _animal;
             this.animalName = _animalName;
             this.sound = _sound;
@@ -9,23 +9,22 @@ var Aufgabe9_1;
             this.foodEaten = _foodEaten;
             this.foodAmount = _foodAmount;
         }
-        Animal.prototype.food = function () {
-            return this.foodType + " : " + this.foodAmount + " Kg//  ";
-        };
-        Animal.prototype.format = function () {
-            return "<br>The " + this.animal + " named " + this.animalName + " makes \"" + this.sound + "\", and eats " + this.foodEaten + " Kg of " + this.foodType + ".<br>";
-        };
-        return Animal;
-    }());
+        food() {
+            return `${this.foodType} : ${this.foodAmount} Kg//  `;
+        }
+        format() {
+            return `<br>The ${this.animal} named ${this.animalName} makes "${this.sound}", and eats ${this.foodEaten} Kg of ${this.foodType}.<br>`;
+        }
+    }
     window.addEventListener("load", handleLoad);
-    var animal_1 = new Animal("Cow", "Gertrud", "Moo", "Grass", 25, 150);
-    var animal_2 = new Animal("Chicken", "Becky", "Cluck", "Grains", 4, 24);
-    var animal_3 = new Animal("Dog", "Mr.Woofers", "woof", "Meat", 10, 100);
-    var animal_4 = new Animal("Horse", "Dale", "Neigh", "Hay", 20, 160);
-    var animal_5 = new Animal("Cat", "Findus", "Miau", "Fish", 8, 72);
-    var foodDisplay;
-    var animalDisplay;
-    var restartDay;
+    let animal_1 = new Animal("Cow", "Gertrud", "Moo", "Grass", 25, 150);
+    let animal_2 = new Animal("Chicken", "Becky", "Cluck", "Grains", 4, 24);
+    let animal_3 = new Animal("Dog", "Mr.Woofers", "woof", "Meat", 10, 100);
+    let animal_4 = new Animal("Horse", "Dale", "Neigh", "Hay", 20, 160);
+    let animal_5 = new Animal("Cat", "Findus", "Miau", "Fish", 8, 72);
+    let foodDisplay;
+    let animalDisplay;
+    let restartDay;
     function handleLoad(_event) {
         animalDisplay = document.getElementById("animals");
         foodDisplay = document.getElementById("food");

@@ -1,7 +1,7 @@
 var Aufgabe_9_2;
 (function (Aufgabe_9_2) {
-    var Leaf = /** @class */ (function () {
-        function Leaf(_positionYOfLeaf, _positionXOfLeaf) {
+    class Leaf {
+        constructor(_positionYOfLeaf, _positionXOfLeaf) {
             console.log("Blattconstructor");
             this.positionYOfLeaf = _positionYOfLeaf;
             this.positionXOfLeaf = _positionXOfLeaf;
@@ -9,9 +9,9 @@ var Aufgabe_9_2;
             this.velocity = new Aufgabe_9_2.Vector(0, 0);
             this.velocity.random(100, 200);
         }
-        Leaf.prototype.move = function (_timeslice) {
+        move(_timeslice) {
             // console.log("Asteroid move");
-            var offset = new Aufgabe_9_2.Vector(this.velocity.x, this.velocity.y);
+            let offset = new Aufgabe_9_2.Vector(this.velocity.x, this.velocity.y);
             offset.scale(_timeslice);
             this.position.add(offset);
             if (this.position.x < 0)
@@ -22,8 +22,8 @@ var Aufgabe_9_2;
                 this.position.x -= Aufgabe_9_2.crc2.canvas.width;
             if (this.position.y > Aufgabe_9_2.crc2.canvas.height)
                 this.position.y -= Aufgabe_9_2.crc2.canvas.height;
-        };
-        Leaf.prototype.draw = function () {
+        }
+        draw() {
             console.log("Blatt Draw");
             Aufgabe_9_2.crc2.save();
             Aufgabe_9_2.crc2.beginPath();
@@ -33,9 +33,8 @@ var Aufgabe_9_2;
             Aufgabe_9_2.crc2.stroke();
             Aufgabe_9_2.crc2.closePath();
             Aufgabe_9_2.crc2.restore();
-        };
-        return Leaf;
-    }());
+        }
+    }
     Aufgabe_9_2.Leaf = Leaf;
 })(Aufgabe_9_2 || (Aufgabe_9_2 = {}));
 //# sourceMappingURL=blatt.js.map

@@ -1,12 +1,12 @@
 var Aufgabe3;
 (function (Aufgabe3) {
-    var span = document.getElementById("span01");
+    let span = document.getElementById("span01");
     window.addEventListener("load", handleLoad);
     function handleLoad(_event) {
-        var div0 = document.createElement("div");
+        let div0 = document.createElement("div");
         div0.classList.add("div0");
         document.body.appendChild(div0);
-        var div1 = document.createElement("div");
+        let div1 = document.createElement("div");
         div1.classList.add("div1");
         document.body.appendChild(div1);
         /*let span: HTMLElement = document.createElement("span");
@@ -17,7 +17,7 @@ var Aufgabe3;
         document.body.addEventListener("keyup", logInfo);
         document.addEventListener("click", logInfo);
         document.addEventListener("keyup", logInfo);
-        var button = document.createElement("button");
+        let button = document.createElement("button");
         button.classList.add("button01");
         div0.appendChild(button);
         //console.log(_event);
@@ -25,9 +25,9 @@ var Aufgabe3;
     }
     function setInfoBox(_event) {
         //console.log("hallo");
-        var x = _event.clientX;
-        var y = _event.clientY;
-        var target = _event.target;
+        let x = _event.clientX;
+        let y = _event.clientY;
+        let target = _event.target;
         span.style.left = x + "px";
         span.style.top = y + "px";
         span.innerHTML = "X: " + x + "px" + "<br>" + "Y: " + y + "px" + "<br>" + target;

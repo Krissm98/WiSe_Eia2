@@ -1,25 +1,26 @@
 var Aufgabe5;
 (function (Aufgabe5) {
     window.addEventListener("load", handleLoad);
-    var eingabe;
-    var nodeList;
-    var font;
-    var cardSize;
-    var backgroundColor1;
-    var selectField;
-    var body = document.getElementById("body1");
+    let eingabe;
+    let nodeList;
+    let font;
+    let cardSize;
+    let backgroundColor1;
+    let selectField;
+    let body = document.getElementById("body1");
     function handleLoad(_event) {
+        console.log("hello");
         eingabe = document.getElementById("kartenName");
-        var form = document.querySelector("div#formSettings");
+        let form = document.querySelector("div#formSettings");
         form.addEventListener("change", handleChange);
         document.getElementById("startButton").addEventListener("click", gameStart);
     }
     function handleChange(_event) {
-        var formData = new FormData(document.forms[0]);
-        var nodeList = document.querySelectorAll("input");
-        var font = document.querySelector("select");
-        var cardSize = nodeList[0].value;
-        var backgroundColor1 = nodeList[1].value;
+        let formData = new FormData(document.forms[0]);
+        let nodeList = document.querySelectorAll("input");
+        let font = document.querySelector("select");
+        let cardSize = nodeList[0].value;
+        let backgroundColor1 = nodeList[1].value;
         console.log(font.value);
         // for (let entry of formData) {
         //     console.log(formData);
@@ -32,23 +33,26 @@ var Aufgabe5;
         console.log(nodeList);
     }
     function gameStart() {
-        var formData = new FormData(document.forms[0]);
-        var nodeList = document.querySelectorAll("input");
-        var font = document.querySelector("select");
-        var cardSize = nodeList[0].value;
-        var backgroundColor1 = nodeList[1].value;
-        var cardBackgroundColor = nodeList[2].value;
-        var fontColor = nodeList[3].value;
-        var timer = nodeList[4].value;
-        var timerNumber = parseInt(timer);
+        let formData = new FormData(document.forms[0]);
+        let nodeList = document.querySelectorAll("input");
+        let font = document.querySelector("select");
+        let cardSize = nodeList[0].value;
+        let backgroundColor1 = nodeList[1].value;
+        let cardBackgroundColor = nodeList[2].value;
+        let fontColor = nodeList[3].value;
+        let timer = nodeList[4].value;
+        let timerNumber = parseInt(timer);
         document.getElementById("formSettings").classList.add("ishidden");
-        var array1 = eingabe.value.split("");
-        var eingabe2 = eingabe.value;
-        var arrayCards2 = eingabe2.split("");
-        var arrayCards3 = [];
-        var _loop_1 = function (index) {
-            var zufallsZahl = Math.floor(Math.random() * (array1.length));
-            var card = document.createElement("div");
+        let array1 = eingabe.value.split("");
+        let eingabe2 = eingabe.value;
+        let arrayCards2 = eingabe2.split("");
+        let arrayCards3 = [];
+        //let bla: string = eingabe;
+        // console.log(array1);
+        //debugger;
+        for (let index = 0; index < eingabe.value.length; index++) {
+            let zufallsZahl = Math.floor(Math.random() * (array1.length));
+            const card = document.createElement("div");
             card.classList.add("Card" + index);
             document.body.appendChild(card);
             card.innerHTML = array1[zufallsZahl];
@@ -91,12 +95,6 @@ var Aufgabe5;
                     }
                 }
             }
-        };
-        //let bla: string = eingabe;
-        // console.log(array1);
-        //debugger;
-        for (var index = 0; index < eingabe.value.length; index++) {
-            _loop_1(index);
         }
     }
 })(Aufgabe5 || (Aufgabe5 = {}));

@@ -2,12 +2,12 @@ var Aufgabe6;
 (function (Aufgabe6) {
     window.addEventListener("load", handleload);
     function handleload(_event) {
-        var cvs = document.querySelector("canvas");
-        var crc2 = cvs.getContext("2d");
-        var randomNumber = Math.random() * 100;
-        for (var index = 0; index < randomNumber; index++) {
-            var x = Math.random() * 800;
-            var y = Math.random() * 600;
+        let cvs = document.querySelector("canvas");
+        let crc2 = cvs.getContext("2d");
+        let randomNumber = Math.random() * 100;
+        for (let index = 0; index < randomNumber; index++) {
+            let x = Math.random() * 800;
+            let y = Math.random() * 600;
             crc2.beginPath();
             crc2.moveTo(x, y);
             crc2.lineTo(x, y + 70);

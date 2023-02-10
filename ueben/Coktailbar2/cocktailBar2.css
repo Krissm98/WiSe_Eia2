@@ -1,0 +1,38 @@
+#createDrink {
+    background-color: aquamarine;
+    margin-right: 850px;
+    position: fixed;
+    top: 115px;
+    left: 20px;
+}
+
+#order {
+    background-color: beige;
+    height: 200px;
+    width: 300px;
+    position: relative;   
+    margin-top: 100px;
+}
+
+#yourOrder {
+    background-color: blueviolet;
+    height: 600px;
+    width: 300px;
+    position: fixed;
+    left: 500px;
+    top: 115px;
+}
+
+h3 {
+    height: 100px;
+    width: 300px;
+    position: fixed;
+    left: 500px;
+    top: 115px;
+    z-index: 1;
+}
+
+#orderText {
+    position: relative;
+    margin-top: 200px;
+}

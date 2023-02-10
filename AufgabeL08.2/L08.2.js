@@ -1,16 +1,16 @@
 var Aufgabe_L082;
 (function (Aufgabe_L082) {
-    var treeNumber = 0;
+    let treeNumber = 0;
     window.addEventListener("load", handleLoad);
-    var crc2;
-    var golden = 0.62;
-    var randomNumber = Math.random() * 100;
+    let crc2;
+    let golden = 0.62;
+    let randomNumber = Math.random() * 100;
     function handleLoad(_event) {
-        var canvas = document.querySelector("canvas");
+        let canvas = document.querySelector("canvas");
         if (!canvas)
             return;
         crc2 = canvas.getContext("2d");
-        var horizon = crc2.canvas.height * golden;
+        let horizon = crc2.canvas.height * golden;
         drawBackground();
         drawAnimal({ x: 300, y: 1000 });
         drawCloud({ x: 500, y: 125 }, { x: 250, y: 75 });
@@ -23,7 +23,7 @@ var Aufgabe_L082;
     }
     function drawBackground() {
         console.log("Background");
-        var gradient = crc2.createLinearGradient(0, 0, 0, crc2.canvas.height);
+        let gradient = crc2.createLinearGradient(0, 0, 0, crc2.canvas.height);
         gradient.addColorStop(0, "lightblue");
         gradient.addColorStop(golden, "white");
         gradient.addColorStop(1, "green");
@@ -32,20 +32,20 @@ var Aufgabe_L082;
     }
     function drawCloud(_position, _size) {
         console.log("Cloud", _position, _size);
-        var numberParticles = 20;
-        var radiusParticles = 50;
-        var particle = new Path2D();
-        var gradient = crc2.createRadialGradient(0, 0, 0, 0, 0, radiusParticles);
+        let numberParticles = 20;
+        let radiusParticles = 50;
+        let particle = new Path2D();
+        let gradient = crc2.createRadialGradient(0, 0, 0, 0, 0, radiusParticles);
         particle.arc(0, 0, radiusParticles, 0, 2 * Math.PI);
         gradient.addColorStop(0, "HSLA(0, 100%, 100%, 0.5)");
         gradient.addColorStop(1, "HSLA(0, 100%, 100%, 0)");
         crc2.save();
         crc2.translate(_position.x, _position.y);
         crc2.fillStyle = gradient;
-        for (var i = 0; i < numberParticles; i++) {
+        for (let i = 0; i < numberParticles; i++) {
             crc2.save();
-            var x = (Math.random() - 0.5) * _size.x;
-            var y = -(Math.random() * _size.y);
+            let x = (Math.random() - 0.5) * _size.x;
+            let y = -(Math.random() * _size.y);
             crc2.translate(x, y);
             crc2.fill(particle);
             crc2.restore();
@@ -54,9 +54,9 @@ var Aufgabe_L082;
     }
     function drawMountains(_position, _min, _max, _colorLow, _colorHigh) {
         console.log("Mountains");
-        var stepMin = 50;
-        var stepMax = 150;
-        var x = 0;
+        let stepMin = 50;
+        let stepMax = 150;
+        let x = 0;
         crc2.save();
         crc2.translate(_position.x, _position.y);
         crc2.beginPath();
@@ -64,12 +64,12 @@ var Aufgabe_L082;
         crc2.lineTo(0, -_max);
         do {
             x += stepMin + Math.random() * (stepMax - stepMin);
-            var y = -_min - Math.random() * (_max - _min);
+            let y = -_min - Math.random() * (_max - _min);
             crc2.lineTo(x, y);
         } while (x < crc2.canvas.width);
         crc2.lineTo(x, 0);
         crc2.closePath();
-        var gradient = crc2.createLinearGradient(0, 0, 0, -_max);
+        let gradient = crc2.createLinearGradient(0, 0, 0, -_max);
         gradient.addColorStop(0, _colorLow);
         gradient.addColorStop(0.7, _colorHigh);
         crc2.fillStyle = gradient;
@@ -77,7 +77,7 @@ var Aufgabe_L082;
         crc2.restore();
     }
     function drawTrees(_positionX, _positionY) {
-        for (var i = 0; i < 30; i++) {
+        for (let i = 0; i < 30; i++) {
             if (i >= 1) {
                 treeNumber = treeNumber + 50 + randomNumber;
             }

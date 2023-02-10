@@ -10,7 +10,7 @@ namespace Aufgabe5 {
     let selectField: HTMLDivElement;
     let body: HTMLBodyElement = <HTMLBodyElement>document.getElementById("body1");
     function handleLoad(_event: Event): void {
-
+        console.log("hello");
         eingabe = <HTMLInputElement>document.getElementById("kartenName");
         let form: HTMLDivElement = <HTMLDivElement>document.querySelector("div#formSettings");
         form.addEventListener("change", handleChange);
